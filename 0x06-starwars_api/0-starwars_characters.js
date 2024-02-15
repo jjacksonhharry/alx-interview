@@ -31,7 +31,7 @@ request(urlMovie, function (error, response, body) {
 });
 
 // Recursive function to fetch and print information about each character
-function CharRequest(idx, url, characters, limit) {
+function CharRequest (idx, url, characters, limit) {
   // Check if all characters have been processed
   if (idx === limit) {
     return;
