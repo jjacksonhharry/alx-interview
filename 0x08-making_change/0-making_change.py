@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Function that Returns the fewest number of coins needed to meet total
+"""
+
 
 def makeChange(coins, total):
     """
