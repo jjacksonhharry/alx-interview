@@ -4,15 +4,18 @@ import sys
 import signal
 
 # Dictionary to store status code counts
-status_counts = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+status_counts = {200: 0, 301: 0, 400: 0, 401: 0,
+                 403: 0, 404: 0, 405: 0, 500: 0}
 
 # Variable to store total file size
 total_file_size = 0
+
 
 # Function to handle keyboard interrupt (CTRL + C)
 def keyboard_interrupt(signal, frame):
     print_stats()
     sys.exit(0)
+
 
 # Function to print statistics
 def print_stats():
@@ -20,6 +23,7 @@ def print_stats():
     for status_code in sorted(status_counts.keys()):
         if status_counts[status_code] > 0:
             print(f"{status_code}: {status_counts[status_code]}")
+
 
 # Registering signal handler for keyboard interrupt
 signal.signal(signal.SIGINT, keyboard_interrupt)
